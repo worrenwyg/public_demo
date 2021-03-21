@@ -1,0 +1,19 @@
+server:
+  port: 8091
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+
+  application:
+    name: normal-provider
+eureka:
+  instance:
+    instance-id: normal-provider
+    prefer-ip-address: true
+
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://localhost:8093/eureka
